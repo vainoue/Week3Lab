@@ -26,7 +26,7 @@ public class AgeCalculatorServlet extends HttpServlet {
         String age_string = request.getParameter("inputage");
         
         if (age_string.equals("")) {
-            request.setAttribute("displaymessage", "You must give your current age");
+            request.setAttribute("displaymessage", "You must give your current age.");
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
                 .forward(request, response);
             return;
@@ -36,7 +36,7 @@ public class AgeCalculatorServlet extends HttpServlet {
         try {
             age = (Integer.parseInt(age_string)) + 1;
         } catch (NumberFormatException nfe) {
-           request.setAttribute("displaymessage", "You must enter a number");
+           request.setAttribute("displaymessage", "You must enter a number.");
             getServletContext().getRequestDispatcher("/WEB-INF/agecalculator.jsp")
                 .forward(request, response);
             return;
