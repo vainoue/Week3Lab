@@ -2,7 +2,6 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +20,6 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
                 .forward(request, response);
     }
-
    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
