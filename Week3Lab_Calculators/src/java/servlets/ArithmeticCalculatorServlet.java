@@ -57,35 +57,33 @@ public class ArithmeticCalculatorServlet extends HttpServlet {
         if (button.equals("+")) {
             result = f_number + s_number;
             request.setAttribute("result_arithmetic", result + "<br>");
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
-                .forward(request, response);
-            return;
+            
         }
         else if (button.equals("-")) {
             result = f_number - s_number;
             request.setAttribute("result_arithmetic", result + "<br>");
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
-                .forward(request, response);
-            return;
+            
         }
         else if (button.equals("*")) {
             result = f_number * s_number;
             request.setAttribute("result_arithmetic", result + "<br>");
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
-                .forward(request, response);
-            return;
+            
         } else {
+            
             if (s_number == 0) {
                 request.setAttribute("result_arithmetic", "Invalid. Second number should not be 0<br>");
             getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
                 .forward(request, response);
             return;
             }
+            
             result = f_number % s_number;
             request.setAttribute("result_arithmetic", result + "<br>");
-            getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
-                .forward(request, response);
-            return;
+            
         }
+        
+        getServletContext().getRequestDispatcher("/WEB-INF/arithmeticcalculator.jsp")
+                .forward(request, response);
+        
     }
 }
